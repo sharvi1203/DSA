@@ -49,3 +49,36 @@ public:
 		return dp[target];
 	}
 };
+
+###########################OR#########################################
+//O(2^n)
+
+
+class Solution {
+public:
+    bool subsetSum(vector<int>& nums,int n,int sum){
+        if(sum==0){
+            return true;
+        }
+        if(sum!=0 && n==0){
+            return false;
+        }
+        if(nums[n-1]>sum){
+            return subsetSum(nums,n-1,sum);
+        }
+        return subsetSum(nums,n-1,sum)||subsetSum(nums,n-1,sum-nums[n-1]);
+    }
+    bool canPartition(vector<int>& nums) {
+        int sum=0;
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+        }
+        if(sum%2!=0){
+            return false;
+        } 
+        int n=nums.size();
+        return subsetSum(nums,n,sum/2);
+    }
+};
+
+
