@@ -20,7 +20,8 @@ public:
         return (val*val == n);
     }
     int numSquares(int n) {
-        //Lagranges 4 - sqaure theoram states that a natural number can be represented in the form of sum of sqare of             //atmost 4 values
+        //Lagranges 4 - sqaure theoram states that a natural number can be represented in the form of sum of square of    
+        //atmost 4 values
         // Therefore least number can be either 1 , 2 , 3 ,4;
         // the ans can only be 4 if n can be represented as 4^k(8m+7)
         if(isSquare(n)){
