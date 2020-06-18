@@ -32,7 +32,6 @@
     On day 31, you bought a 1-day pass for costs[0] = $2 which covered day 31.
     In total you spent $17 and covered all the days of your travel.
 
-
     Note:
 
     1 <= days.length <= 365
