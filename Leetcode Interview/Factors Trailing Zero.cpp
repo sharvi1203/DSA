@@ -8,3 +8,10 @@ public:
         return count;
     }
 };
+
+/*
+n/5^k >=1
+n>=5^k
+log5(n)=k
+so time complexity will be log5(n)
+*/
