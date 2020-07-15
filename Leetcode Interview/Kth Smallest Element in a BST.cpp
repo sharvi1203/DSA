@@ -25,3 +25,4 @@ public:
         return pre[k-1];
     }
 };
+// yeh dekh lio https://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/
