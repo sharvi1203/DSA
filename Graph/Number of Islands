@@ -1,0 +1,31 @@
+bool isValid(int r,int c,int N,int M,vector<vector<bool>> & visited){
+    return r>=0 && c>=0 && r<N && c<M && visited[r][c]==false;
+}
+void findIslands(vector<int> A[],vector<vector<bool>> & visited,int N,int M,int r,int c){
+    if(isValid(r,c,N,M,visited) && A[r][c]==1){
+        visited[r][c]=true;
+        findIslands(A,visited,N,M,r+1,c);
+        findIslands(A,visited,N,M,r+1,c-1);
+        findIslands(A,visited,N,M,r+1,c+1);
+        findIslands(A,visited,N,M,r-1,c);
+        findIslands(A,visited,N,M,r-1,c-1);
+        findIslands(A,visited,N,M,r-1,c+1);
+        findIslands(A,visited,N,M,r,c-1);
+        findIslands(A,visited,N,M,r,c+1);
+    }
+}
+int findIslands(vector<int> A[], int N, int M) {
+    int count=0;
+    vector<vector<bool>>  visited(N,vector<bool>(M,false));
+    for(int i=0;i<N;i++){
+        for(int j=0;j<M;j++){
+            if(A[i][j]==1){
+                if(visited[i][j]==false){
+                    findIslands(A,visited,N,M,i,j);
+                    count++;
+                }
+            }
+        }
+    }
+    return count;
+}
